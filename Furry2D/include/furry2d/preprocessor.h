@@ -70,7 +70,7 @@
 #include <cstdint>
 #include <exception>
 
-namespace furry {
-}
+#define FURRY_NS_BEGIN namespace  furry2d {
+#define FURRY_NS_END }
 
 #endif
