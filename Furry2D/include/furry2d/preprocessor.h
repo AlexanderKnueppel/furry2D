@@ -56,6 +56,12 @@
 #   endif
 #endif
 
+#if defined(_M_X64) || defined(__amd64__)
+#	define FURRY_64BIT
+#else
+#	define FURRY_32BIT
+#endif
+
 #if defined(__GNUC__)
 #   define FURRY_COMPILER_GCC  // GNU Compiler Collection
 #elif defined(_MSC_VER)
