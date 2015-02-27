@@ -1,5 +1,5 @@
 #ifndef __FURRY_PREPROCESSOR_H__
-#define __FURRY_PREPROCESSOR_H__  
+#define __FURRY_PREPROCESSOR_H__
 
 /*
 * ****************************************
@@ -15,19 +15,25 @@
 
 #if defined(__WIN32__) || defined(_MSC_VER)
 #   define FURRY_PLATFORM_WINDOWS
+#   define FURRY_PLATFORM_STRING "Windows"
 #elif defined(__linux__) || defined(__unix__)
 #   define FURRY_PLATFORM_LINUX
+#   define FURRY_PLATFORM_STRING "Linux"
 #elif defined(__APPLE__) || defined(MACOSX)
 #   define FURRY_PLATFORM_MACOSX // unsupported yet
 #   error Furry2D is not supported under "Apple MacOSX" yet!
+#   define FURRY_PLATFORM_STRING "Mac OS"
 #elif defined(__FreeBSD__)
 #   define FURRY_PLATFORM_FREEBSD // unsupported yet
 #   error Furry2D is not supported under "FreeBSD" yet!
+#   define FURRY_PLATFORM_STRING "FreeBSD"
 #elif defined(__sparc__) || defined(__sun__)
 #   define FURRY__PLATFORM_SOLARIS // unsupported yet
 #   error Furry2D is not supported under "Sun Solaris" yet!
+#   define FURRY_PLATFORM_STRING "Sun Solaris"
 #else
 #   error Unknown platform, no support!
+#   define FURRY_PLATFORM_STRING "Unknown"
 #endif
 
 #if defined(_DEBUG) 
