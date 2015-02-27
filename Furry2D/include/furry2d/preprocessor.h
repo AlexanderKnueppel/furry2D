@@ -74,15 +74,15 @@
 //Only on windows
 #	pragma warning( disable: 4251 ) //Warning: needs to have dll-interface to be used by clients, it's a nuisance (template issues...)
 // optimization here
+#	define FURRY_NOEXCEPT
 #endif
-
-//definition types
-#define FURRY_VERSION     0.1
 
 #include <cstdint>
 #include <exception>
 
-#define FURRY_NS_BEGIN namespace  furry2d {
+#define FURRY_NS furry2d
+
+#define FURRY_NS_BEGIN namespace FURRY_NS {
 #define FURRY_NS_END }
 
 #endif
