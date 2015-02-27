@@ -1,2 +1,2 @@
-# furry2D
-Simple game framework written in C++11 with the use of OpenGL4 for upcoming desktop games
+# Furry2D
+Furry2D is a simple game framework for 2D-Desktop Games written in modern C++ and using OpenGL.
