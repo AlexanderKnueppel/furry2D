@@ -33,7 +33,9 @@ using std::endl;
 
 //// Util classes 
 #include <furry2d/util/concurrentqueue.h>
+#include <furry2d/util/concurrentvector.h>
 #include <furry2d/util/active.h>
+#include <furry2d/util/timer.h>
 // Basic subset of core classes follows here 
 #include <furry2d/core/version.h>
 // Logging
