@@ -8,8 +8,6 @@
 #include <chrono>
 #include <ostream>
 
-#include <furry2d/preprocessor.h>
-
 FURRY_NS_BEGIN
 
 /**
