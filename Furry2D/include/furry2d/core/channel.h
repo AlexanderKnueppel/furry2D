@@ -40,17 +40,12 @@ namespace detail {
 
 		template <typename tHandler>
 		void add(tHandler* handler) {
-			mInternalVector.push_back(
-				std::make_pair(
-				(void*)handler,
-				createHandler(handler)
-				)
-				);
+			vector_.push_back(std::make_pair((void*)handler, createHandler(handler)));
 		}
 
 		template <typename tHandler>
 		void remove(tHandler* handler) {
-			mInternalVector.remove_if(
+			vector_.remove_if(
 				[handler](const HandlerPair& pair) {
 				return (handler == pair.first);
 			}
@@ -58,7 +53,7 @@ namespace detail {
 		}
 
 		void broadcast(const tMessage& message) {
-			auto localVector = mInternalVector.copyInternals();
+			auto localVector = vector_.copyInternals();
 
 			for (const auto& pair : localVector)
 				pair.second(message);
@@ -76,7 +71,7 @@ namespace detail {
 		typedef std::function<void(const tMessage&)> Handler;
 		typedef std::pair<void*, Handler> HandlerPair;
 
-		util::ConcurrentVector<HandlerPair> mInternalVector;
+		ConcurrentVector<HandlerPair> vector_;
 	};
 }
 
