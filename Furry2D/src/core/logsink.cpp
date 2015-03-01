@@ -12,7 +12,6 @@
 *
 * ****************************************
 */
-
 #include <furry2d/furry2d.h>
 #include <fstream>
 #include <memory>
@@ -43,18 +42,32 @@ void LogSink::forward(
 	wrapper_->forward(meta, message);
 }
 
+std::ostream& operator<< (std::ostream& os, const LogLevel& level) {
+	switch (level) {
+	case LogLevel::EDebug:		os << "[dbg] ";		break;
+	case LogLevel::EMessage:	os << "      ";		break;
+	case LogLevel::EWarning:	os << ">wrn< ";		break;
+	case LogLevel::EError:		os << "< ERROR >      ";	break;	// extra noticable
+	case LogLevel::EFatal:		os << ">>>>FATAL<<<<  ";	break;	// extra noticable
+	default:
+		os << "Unknown";
+	}
+
+	return os;
+}
+
 LogSink makeConsoleSink() {
 	return[](
 		const LogMessage::Meta& meta,
 		const std::string& message
 		) {
+		operator<<(std::cout, meta.level_);
 		std::cout
 			<< meta.level_
 			<< message
 			<< "\n";
 	};
 }
-
 namespace {
 	struct FileSink {
 		FileSink(const std::string& filename) :

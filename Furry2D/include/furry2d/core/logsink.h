@@ -45,6 +45,8 @@ public:
 		const std::string& message
 		) const;
 
+	friend std::ostream &operator << (std::ostream& os, const LogLevel& level);
+
 private:
 	struct Concept {
 		virtual ~Concept() = default;

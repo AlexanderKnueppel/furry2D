@@ -51,19 +51,3 @@ bool logLevel(LogLevel level) {
 }
 
 FURRY_NS_END
-
-std::ostream& operator << (std::ostream& os, const FURRY_NS::LogLevel& level) {
-	using FURRY_NS::LogLevel;
-
-	switch (level) {
-	case LogLevel::EDebug:		os << "[dbg] ";		break;
-	case LogLevel::EMessage:	os << "      ";		break; 
-	case LogLevel::EWarning:	os << ">wrn< ";		break;
-	case LogLevel::EError:		os << "< ERROR >      ";	break;	// extra noticable
-	case LogLevel::EFatal:		os << ">>>>FATAL<<<<  ";	break;	// extra noticable
-	default:
-		os << "Unknown";
-	}
-
-	return os;
-}

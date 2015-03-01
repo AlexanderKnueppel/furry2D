@@ -16,8 +16,9 @@
 * ****************************************
 */
 
-FURRY_NS_BEGIN
+#include <ostream>
 
+FURRY_NS_BEGIN
 
 /**
 * \brief Logger level
@@ -32,7 +33,5 @@ void FURRY_API setLogLevel(LogLevel, bool enabled);
 bool FURRY_API logLevel(LogLevel);
 
 FURRY_NS_END
-
-std::ostream FURRY_API &operator << (std::ostream& os, const FURRY_NS::LogLevel& level);
 
 #endif
