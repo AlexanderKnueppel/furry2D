@@ -44,4 +44,20 @@ using std::endl;
 #include <furry2d/core/logmessage.h>
 #include <furry2d/core/logsink.h>
 
+#include <GL/gl3w.h>
+#include <GLFW/glfw3.h>
+
+// System stuff
+#include <furry2d/core/channel.h>
+#include <furry2d/core/system.h>
+#include <furry2d/core/application.h>
+#include <furry2d/core/glfwapplication.h>
+#include <furry2d/core/configsystem.h>
+#include <furry2d/core/task.h>
+#include <furry2d/core/taskprocessor.h>
+#include <furry2d/core/engine.h>
+
+// Application
+
+
 #endif /* __FURRY_FURRY2D_H__ */
