@@ -21,7 +21,7 @@ FURRY_NS_BEGIN
 class Engine;
 
 // Abstract 'system' (aka module)
-class System {
+class FURRY_API System {
 public:
 	friend class Engine;
 
