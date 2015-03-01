@@ -34,4 +34,5 @@ void System::shutdown() {
 	gLog << "Shutting down " << getName();
 #endif
 }
+
 FURRY_NS_END
