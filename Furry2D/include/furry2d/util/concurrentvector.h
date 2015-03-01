@@ -20,8 +20,6 @@
 #include <mutex>
 #include <condition_variable>
 
-#include <furry2d/preprocessor.h>
-
 FURRY_NS_BEGIN
 
 /**
